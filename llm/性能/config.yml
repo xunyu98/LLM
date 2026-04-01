@@ -1,0 +1,31 @@
+model_name: rednote-dots-ocr
+
+single_running_time: 300
+max_first_char_time: 0.3
+min_first_char_time: 0.29
+script_max_running_time: 21600
+
+input_length: "1000"
+output_length: 0
+fixed_user_count: "1,4,8,16,32,62,128,256"
+auto_user_count_times: 0
+
+
+host: http://100.126.2.1:30321
+base_url: /v1/chat/completions
+is_stream: False
+
+ttft_real_percentage: 0.2
+stop_failed_request_num: 100
+spawn_rate: 100
+
+connect_check: True
+connect_check_string: "ping"
+done_flag: True
+done_flag_string: "[DONE]"
+token_count_method: "json"
+content_string: "choices.0.message.content"
+completion_tokens_string: "usage.completion_tokens"
+prompt_tokens_string: "usage.prompt_tokens"
+finish_flag_string: "choices.0.finish_reason"
+finish_flag: "stop"
